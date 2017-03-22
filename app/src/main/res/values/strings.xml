@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyAgenda</string>
+    <string name="title_activity_search">Buscar Contactos</string>
+    <string name="title_activity_view_all">Ver Todos los Contactos</string>
+    <string name="title_activity_add">Añadir Contactos</string>
+
+</resources>
