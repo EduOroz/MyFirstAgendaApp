@@ -38,19 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void cambiarActivityAñadir (View vi) {
         System.out.println("ACTIVITY-MAIN: Presionado el boton 1");
-        //General.pasarAgenda(agenda, AddActivity.class, this);
         setActivityForResult(AddActivity.class, 0);
     }
 
     public void cambiarActivityBuscar (View vi) {
         System.out.println("ACTIVITY-MAIN: Presionado el boton 2");
-        //General.pasarAgenda(agenda, SearchActivity.class, this);
         setActivity(SearchActivity.class);
     }
 
     public void cambiarActivityVerTodos (View vi) {
         System.out.println("ACTIVITY-MAIN: Presionado el boton 3");
-        //General.pasarAgenda(agenda, ViewAllActivity.class, this);
         setActivity(ViewAllActivity.class);
     }
 
