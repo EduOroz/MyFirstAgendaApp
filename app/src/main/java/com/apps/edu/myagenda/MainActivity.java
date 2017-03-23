@@ -19,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("ACTIVITY-MAIN: Estamos en MAIN onCreate");
         agenda = new ArrayList<Contacto>();
+        //Añadimos 2 contactos por defecto a la aplicacion
         Contacto Edu = new Contacto("Edu", 34, "edu@gmail.com");
         agenda.add(Edu);
+        Contacto Juan = new Contacto("Juan", 30, "juan@gmail.com");
+        agenda.add(Juan);
         //System.out.println("ACTIVITY-MAIN-CREATE: Contacto Edu " +agenda.get(0).toString());
 
     }

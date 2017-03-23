@@ -7,25 +7,34 @@
     android:layout_height="match_parent"
     tools:context="com.apps.edu.myagenda.ViewAllActivity">
 
-    <Button
-        android:id="@+id/btVolverViewAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Volver"
-        android:onClick="cambiarActivityMain"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="61dp"
-        android:layout_marginLeft="148dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
     <TextView
         android:id="@+id/tvSalida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="100dp"
         android:text=""
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lvViewAll" />
+
+    <Button
+        android:id="@+id/btVolverViewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="300dp"
+        android:onClick="cambiarActivityMain"
+        android:text="Volver"
+        app:layout_constraintTop_toTopOf="@+id/lvViewAll"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ListView
+        android:id="@+id/lvViewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

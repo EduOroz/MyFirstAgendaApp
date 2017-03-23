@@ -43,10 +43,10 @@ public class Contacto implements Serializable{
 
     @Override
     public String toString() {
-        return "Contacto{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", email='" + email + '\'' +
-                '}';
+        return getNombre();
+    }
+
+    public String ContactoToString() {
+        return "Nombre= " +getNombre() +", Edad= " +getEdad() +", Email= " +getEmail();
     }
 }
