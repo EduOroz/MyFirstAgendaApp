@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class AddActivity extends AppCompatActivity {
 
     private ArrayList<Contacto> agenda;
+    AccesoFichero af;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,8 @@ public class AddActivity extends AppCompatActivity {
 
         System.out.println("ACTIVITY-ADD: guardando Contacto");
 
-        //Recupero el intent
-        Intent intent = getIntent();
+        //Abrimos el fichero
+        af = new AccesoFichero(this, "contactos.txt");
 
         EditText nombre = (EditText) findViewById(R.id.etNombre);
         EditText edad = (EditText) findViewById(R.id.etEdad);
@@ -57,12 +58,12 @@ public class AddActivity extends AppCompatActivity {
             crearAlerta("Alguno de los campos está vacío");
         } else {
             Contacto contacto = new Contacto(nombre.getText().toString(), Integer.parseInt(edad.getText().toString()), email.getText().toString());
-            agenda = (ArrayList<Contacto>) intent.getSerializableExtra("Agenda");
-            agenda.add(contacto);
-            setResult(RESULT_OK, intent);
+            af.guardarContacto(contacto);
 
-            for (int i = 0; i < agenda.size(); i++) {
-                System.out.println("ACTIVITY-ADD - Contacto " + i + ":" + agenda.get(i).toString());
+            //Visualizamos los datos de la agenda por consola para verificar se ha añadido el conctacto
+            agenda = af.recuperarContactos();
+            for (int i=0; i<agenda.size();i++){
+                System.out.println("ACTIVITY-ADDConctaco: " +agenda.get(i).ContactoToFichero());
             }
             this.finish();
         }

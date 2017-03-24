@@ -49,4 +49,8 @@ public class Contacto implements Serializable{
     public String ContactoToString() {
         return "Nombre= " +getNombre() +", Edad= " +getEdad() +", Email= " +getEmail();
     }
+
+    public String ContactoToFichero() {
+        return getNombre() +"," +getEdad() +"," +getEmail();
+    }
 }

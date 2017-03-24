@@ -19,6 +19,7 @@ public class ViewAllActivity extends AppCompatActivity {
 
     private ArrayList<Contacto> agenda;
     private ListView lvViewAll;
+    AccesoFichero af;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +28,9 @@ public class ViewAllActivity extends AppCompatActivity {
 
         System.out.println("ACTIVITY-ViewAll: OnCreate");
 
-        //Recupero el intent
-        Intent intent = getIntent();
-        //Recupero la agenda
-        agenda = (ArrayList<Contacto>)intent.getSerializableExtra("Agenda");
-
-        //Código para introducir el array de contactos en el TextView
-        /*TextView salida = (TextView) findViewById(R.id.tvSalida);
-        String aux="";
-
-        if(agenda.isEmpty()){
-            salida.setText("No hay contactos en la agenda");
-        } else {
-            for (int i = 0; i < agenda.size(); i++) {
-                System.out.println("ACTIVITY-ViewAll - Contacto " + i + ":" + agenda.get(i).toString());
-                aux += "Contacto " + i + ":" + agenda.get(i).toString() +"\n";
-            }
-
-            salida.setText(aux);
-        }*/
+        //Recupero la agenda que está en fichero
+        af = new AccesoFichero(this, "contactos.txt");
+        agenda = af.recuperarContactos();
 
         //Código para mostrar el array de contactos en un ListView
         //Creamos un Adapter y le pasamos el array

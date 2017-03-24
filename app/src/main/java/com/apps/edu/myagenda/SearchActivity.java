@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class SearchActivity extends AppCompatActivity {
 
     private ArrayList<Contacto> agenda;
+    AccesoFichero af;
 
     //Función para crear alertas
     private void crearAlerta(String texto){
@@ -53,10 +54,10 @@ public class SearchActivity extends AppCompatActivity {
 
     public void buscarEmail (View vi) {
         System.out.println("ACTIVITY-Search: Presionado el boton Buscar");
-        //Recupero el intent
-        Intent intent = getIntent();
-        //Recupero la agenda
-        agenda = (ArrayList<Contacto>)intent.getSerializableExtra("Agenda");
+
+        //Recupero la agenda que está en fichero
+        af = new AccesoFichero(this, "contactos.txt");
+        agenda = af.recuperarContactos();
         //Recupero el email a buscar
         EditText email = (EditText) findViewById(R.id.etEmailSearch);
 
